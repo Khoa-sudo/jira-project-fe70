@@ -1,0 +1,14 @@
+Đối tượng window có rất nhiều thuộc tính và phương thức riêng. Ví dụ, đối tượng document là một thuộc tính của window (window.document). Vì vậy, ta có thể ví window là một đối tượng toàn cục và có cấp độ cao nhất trong sơ đồ object BOM của Javascript.
+
+1. Window trong javascript là gì?
+Trong javascript, window là một đối tượng thuộc nhóm BOM - tức là một object có những phương thức và thuộc tính được dùng để xử lý trình duyệt.
+Công dụng của window chủ yếu là các thao tác với trình duyệt như: Tính chiều cao - di chuyển - thay đổi kích thước - mở ra một tab mới - lấy đường dẫn url của website. Vì vậy, nếu bạn đang xây dựng giao diện responsive thì sẽ cần sử dụng đến đối tượng này.
+
+2. Window.innerHeight - lấy kích thước trình duyệt
+Để lấy kích thước chiều cao và chiều rộng của trình duyệt thì chúng ta sử dụng đối tượng window, tuy nhiên với mỗi trình duyệt thì có những cách lấy khác nhau.
+
+//Lấy chiều cao của trình duyệt
+height:window.innerHeight
+
+//Lấy chiều rộng của trình duyệt
+width:window.innerWidth
