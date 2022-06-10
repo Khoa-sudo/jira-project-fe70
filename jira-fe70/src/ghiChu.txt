@@ -12,3 +12,5 @@ height:window.innerHeight
 
 //Lấy chiều rộng của trình duyệt
 width:window.innerWidth
+
+Mỗi lần co giãn trình duyệt phải refresh thì innerWidth và innerHeight mới resize lại

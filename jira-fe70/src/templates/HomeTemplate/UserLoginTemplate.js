@@ -4,8 +4,6 @@ import { Route } from "react-router-dom";
 const { Header, Footer, Sider, Content } = Layout;
 export const UserLoginTemplate = (props) => {
   let { Component, ...restRoute } = props;
-  console.log("restRoute", restRoute);
-  console.log("Component", Component);
   return (
     <Route
       {...restRoute}
@@ -17,7 +15,8 @@ export const UserLoginTemplate = (props) => {
                 width={window.innerWidth / 2}
                 style={{
                   height: window.innerHeight,
-                  background: "url(https://picsum.photos/500)",
+                  background: "url(https://picsum.photos/2000)",
+                  backgroundSize:"100%"
                 }}
               ></Sider>
               <Layout>
