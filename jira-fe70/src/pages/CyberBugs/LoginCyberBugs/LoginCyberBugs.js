@@ -1,8 +1,6 @@
 import React from "react";
 import * as Yup from "yup";
 import {
-  EyeInvisibleOutlined,
-  EyeTwoTone,
   UserOutlined,
   LockOutlined,
   FacebookOutlined,
@@ -11,7 +9,11 @@ import {
 } from "@ant-design/icons";
 import { Button, Input, Space } from "antd";
 import { withFormik } from "formik";
+import { connect } from "react-redux";
+import { USER_SIGNIN_API } from "../../../redux/constants/Cyberbugs/Cyberbugs";
+import { signinCyberbugAction } from "../../../redux/actions/CyberBugsAction";
 const LoginCyberBugs = (props) => {
+  console.log(props);
   const { values, touched, errors, handleChange, handleBlur, handleSubmit } =
     props;
 
@@ -99,7 +101,6 @@ const LoginCyberBugs = (props) => {
   );
 };
 
-
 const LoginCyberBugsWithFormik = withFormik({
   mapPropsToValues: () => ({ email: "", password: "" }),
   validationSchema: Yup.object().shape({
@@ -111,10 +112,12 @@ const LoginCyberBugsWithFormik = withFormik({
       .max(32, "password must be 6 to 32 characters long")
       .required("Password is required"),
   }),
-  handleSubmit: (values, { setSubmitting }) => {
-    console.log(values);
+  handleSubmit: (values, { props, setSubmitting }) => {
+    // let dispatch = props.dispatch
+    setSubmitting(true);
+    props.dispatch(signinCyberbugAction(values.email, values.password));
   },
 
-  displayName: "BasicForm",
+  displayName: "Login CyberBugs",
 })(LoginCyberBugs);
-export default LoginCyberBugsWithFormik;
+export default connect()(LoginCyberBugsWithFormik);
